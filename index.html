@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Negation: nicht oder kein- — Deutsch A1</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Poppins & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              purple: '#7c3aed',
+              indigo: '#4f46e5',
+              blue: '#0284c7',
+              emerald: '#059669',
+              amber: '#d97706',
+              rose: '#e11d48',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top left, #eef2ff 0%, #f8fafc 45%, #f1f5f9 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 3D Flashcard Flip Styles */
+    .perspective-1000 {
+      perspective: 1200px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1.5rem;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Animations */
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.94) translateY(10px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    @keyframes pulseSuccess {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-slide-in {
+      animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-shake {
+      animation: shake 0.4s ease-in-out;
+    }
+
+    .animate-success {
+      animation: pulseSuccess 0.4s ease-out;
+    }
+
+    /* Wordwall-inspired 3D push buttons */
+    .ww-btn {
+      transition: all 0.14s ease;
+      box-shadow: 0 5px 0 rgba(15, 23, 42, 0.16);
+    }
+    .ww-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 rgba(15, 23, 42, 0.18);
+    }
+    .ww-btn:active:not(:disabled) {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 rgba(15, 23, 42, 0.16);
+    }
+
+    .ww-btn-primary {
+      box-shadow: 0 5px 0 #3730a3;
+    }
+    .ww-btn-primary:hover:not(:disabled) {
+      box-shadow: 0 7px 0 #3730a3;
+    }
+    .ww-btn-primary:active:not(:disabled) {
+      box-shadow: 0 2px 0 #3730a3;
+    }
+
+    .ww-btn-emerald {
+      box-shadow: 0 5px 0 #065f46;
+    }
+    .ww-btn-emerald:hover:not(:disabled) {
+      box-shadow: 0 7px 0 #065f46;
+    }
+    .ww-btn-emerald:active:not(:disabled) {
+      box-shadow: 0 2px 0 #065f46;
+    }
+
+    .ww-btn-amber {
+      box-shadow: 0 5px 0 #92400e;
+    }
+
+    .ww-btn-rose {
+      box-shadow: 0 5px 0 #9f1239;
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col justify-between select-none">
+
+  <!-- TOP HEADER & GLOBAL PROGRESS -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <!-- Title Badge -->
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white font-display font-extrabold text-xl flex items-center justify-center shadow-md shrink-0">
+            <i class="fa-solid fa-ban"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Negation: <span class="text-indigo-600">nicht oder kein-</span>
+              </h1>
+              <span class="hidden md:inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
+                Grammatik A1
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 hidden sm:block">Interaktive Präsentation · Übungen 1–4</p>
+          </div>
+        </div>
+
+        <!-- Global Progress & Utility Buttons -->
+        <div class="flex items-center gap-2 sm:gap-3 ml-auto">
+          <!-- Progress Pill -->
+          <div class="bg-slate-100 border border-slate-200 rounded-2xl px-3 py-1.5 flex items-center gap-3">
+            <div class="text-right">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 leading-none">Fortschritt</div>
+              <div id="global-progress-text" class="text-sm font-extrabold text-indigo-700 leading-tight mt-0.5">0 / 29</div>
+            </div>
+            <div class="w-20 sm:w-28 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+              <div id="global-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-emerald-500 transition-all duration-500 rounded-full" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Grid Overview Button -->
+          <button id="btn-overview" onclick="toggleOverviewModal(true)" title="Alle Folien anzeigen"
+            class="p-2.5 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-600 border border-slate-200 transition flex items-center gap-1.5 text-sm font-semibold">
+            <i class="fa-solid fa-table-cells"></i>
+            <span class="hidden lg:inline">Alle Folien</span>
+          </button>
+
+          <!-- Sound Toggle -->
+          <button id="btn-sound" onclick="toggleSound()" title="Ton an/aus"
+            class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition">
+            <i id="sound-icon" class="fa-solid fa-volume-high text-indigo-600"></i>
+          </button>
+
+          <!-- Fullscreen Toggle -->
+          <button id="btn-fullscreen" onclick="toggleFullscreen()" title="Vollbild"
+            class="hidden sm:flex p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition">
+            <i id="fullscreen-icon" class="fa-solid fa-expand"></i>
+          </button>
+
+          <!-- Reset Button -->
+          <button onclick="openResetModal()" title="Fortschritt zurücksetzen"
+            class="p-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 transition flex items-center gap-1.5 text-sm font-semibold">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span class="hidden xl:inline">Zurücksetzen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode / Exercise Navigation Tabs -->
+      <nav class="mt-3 flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar" aria-label="Übungen">
+        <button onclick="setMode('all')" id="tab-all"
+          class="mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Präsentation (1–29)</span>
+          <span id="badge-all" class="px-1.5 py-0.5 text-[11px] rounded-md bg-black/10">0/29</span>
+        </button>
+
+        <button onclick="setMode('ex1')" id="tab-ex1"
+          class="mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border">
+          <span class="w-5 h-5 rounded-md bg-purple-600 text-white text-xs flex items-center justify-center">1</span>
+          <span>Übung 1: Sätze ordnen</span>
+          <span id="badge-ex1" class="px-1.5 py-0.5 text-[11px] rounded-md bg-black/10">0/5</span>
+        </button>
+
+        <button onclick="setMode('ex2')" id="tab-ex2"
+          class="mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border">
+          <span class="w-5 h-5 rounded-md bg-sky-600 text-white text-xs flex items-center justify-center">2</span>
+          <span>Übung 2: <em>kein-</em> ergänzen</span>
+          <span id="badge-ex2" class="px-1.5 py-0.5 text-[11px] rounded-md bg-black/10">0/9</span>
+        </button>
+
+        <button onclick="setMode('ex3')" id="tab-ex3"
+          class="mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border">
+          <span class="w-5 h-5 rounded-md bg-amber-600 text-white text-xs flex items-center justify-center">3</span>
+          <span>Übung 3: Lernkarten</span>
+          <span id="badge-ex3" class="px-1.5 py-0.5 text-[11px] rounded-md bg-black/10">0/6</span>
+        </button>
+
+        <button onclick="setMode('ex4')" id="tab-ex4"
+          class="mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border">
+          <span class="w-5 h-5 rounded-md bg-emerald-600 text-white text-xs flex items-center justify-center">4</span>
+          <span>Übung 4: <em>nicht</em> oder <em>kein-</em>?</span>
+          <span id="badge-ex4" class="px-1.5 py-0.5 text-[11px] rounded-md bg-black/10">0/9</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN PRESENTATION STAGE -->
+  <main class="flex-1 flex flex-col items-center justify-center px-3 sm:px-6 py-4 sm:py-6 max-w-6xl w-full mx-auto">
+    <!-- Slide Card Container -->
+    <div id="slide-stage" class="w-full bg-white rounded-3xl shadow-xl border border-slate-200/90 overflow-hidden flex flex-col min-h-[470px] sm:min-h-[530px] relative">
+      <!-- Slide Top Ribbon -->
+      <div id="slide-ribbon" class="px-5 sm:px-8 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <span id="slide-ex-pill" class="px-3 py-1 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wide bg-purple-100 text-purple-800">
+            Übung 1
+          </span>
+          <span id="slide-instruction" class="text-sm sm:text-base font-semibold text-slate-700">
+            Schreiben Sie Sätze mit nicht.
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span id="slide-status-badge" class="hidden px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 items-center gap-1.5">
+            <i class="fa-solid fa-circle-check"></i> Gelöst
+          </span>
+          <button onclick="toggleGrammarTip()" class="px-3 py-1 rounded-xl text-xs font-bold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-lightbulb text-amber-500"></i>
+            <span>Grammatik-Tipp</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapsible Quick Grammar Banner -->
+      <div id="grammar-tip-box" class="hidden bg-indigo-950 text-white px-5 sm:px-8 py-3.5 text-xs sm:text-sm border-b border-indigo-800">
+        <div class="flex items-start justify-between gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+            <div class="bg-white/10 rounded-xl p-2.5">
+              <span class="font-bold text-amber-300 uppercase text-xs block mb-0.5">Wann benutzt man KEIN-?</span>
+              Nur vor <strong>Nomen ohne Artikel</strong> oder mit <strong>unbestimmtem Artikel (ein / eine / einen)</strong>: <em>kein</em> (m./n. Nom., n. Akk.), <em>keine</em> (f./Pl.), <em>keinen</em> (m. Akk.).
+            </div>
+            <div class="bg-white/10 rounded-xl p-2.5">
+              <span class="font-bold text-sky-300 uppercase text-xs block mb-0.5">Wann benutzt man NICHT?</span>
+              Bei <strong>Verben</strong> (<em>Ich jogge nicht</em>), <strong>Adjektiven</strong> (<em>nicht ledig</em>), <strong>Präpositionen/Orten</strong> (<em>nicht in Köln</em>) und Nomen mit <strong>bestimmtem Artikel oder Possessivartikel</strong> (<em>nicht die Chefin / nicht meine Kinder</em>).
+            </div>
+          </div>
+          <button onclick="toggleGrammarTip()" class="text-white/70 hover:text-white p-1">
+            <i class="fa-solid fa-xmark text-base"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Slide Body -->
+      <div id="slide-content" class="flex-1 p-5 sm:p-8 md:p-10 flex flex-col justify-center">
+        <!-- Content rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- BOTTOM PRESENTATION CONTROLS -->
+  <footer class="bg-white/95 backdrop-blur-md border-t border-slate-200 py-3 px-3 sm:px-6 sticky bottom-0 z-20">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      <!-- Previous Button -->
+      <button id="btn-prev" onclick="prevSlide()"
+        class="ww-btn px-4 sm:px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 disabled:opacity-40 disabled:pointer-events-none text-slate-800 font-display font-bold text-sm sm:text-base flex items-center gap-2 border border-slate-300">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Zurück</span>
+      </button>
+
+      <!-- Slide Counter & Dots -->
+      <div class="flex flex-col items-center">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 hidden sm:inline">Folie</span>
+          <span id="slide-counter" class="font-display font-extrabold text-lg sm:text-xl text-slate-900 bg-slate-100 px-4 py-1 rounded-xl border border-slate-200">
+            1 / 29
+          </span>
+        </div>
+        <div id="mini-dots" class="hidden md:flex items-center gap-1 mt-1.5 max-w-md overflow-hidden">
+          <!-- Mini indicator dots rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button id="btn-next" onclick="nextSlide()"
+        class="ww-btn ww-btn-primary px-4 sm:px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 disabled:pointer-events-none text-white font-display font-bold text-sm sm:text-base flex items-center gap-2">
+        <span>Weiter</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- MODAL: OVERVIEW / SEARCH SLIDES -->
+  <div id="overview-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-slide-in">
+      <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 class="text-lg font-extrabold text-slate-900">Alle Folien (29 Aufgaben)</h2>
+          <p class="text-xs text-slate-500">Klicken Sie auf eine Karte, um direkt zur Folie zu springen</p>
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <div class="relative flex-1 sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+            <input id="overview-search" type="text" oninput="renderOverviewGrid()" placeholder="Satz oder Wort suchen..."
+              class="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <button onclick="toggleOverviewModal(false)" class="w-10 h-10 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="overview-grid" class="p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RESET CONFIRMATION -->
+  <div id="reset-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 animate-slide-in text-center">
+      <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mx-auto mb-4">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h3 class="text-xl font-extrabold text-slate-900 mb-2">Fortschritt zurücksetzen?</h3>
+      <p class="text-sm text-slate-600 mb-6">Alle gelösten Aufgaben der 4 Übungen werden gelöscht und Sie starten wieder bei Folie 1.</p>
+      <div class="flex items-center justify-center gap-3">
+        <button onclick="closeResetModal()" class="flex-1 py-3 px-4 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm transition">
+          Abbrechen
+        </button>
+        <button onclick="confirmResetProgress()" class="flex-1 py-3 px-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition shadow-md">
+          Ja, zurücksetzen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION DATA & LOGIC -->
+  <script>
+    // =========================================================================
+    // 1. DATASET: ALL 29 ITEMS ACROSS EXERCISES 1 - 4
+    // =========================================================================
+    const SLIDES_DATA = [
+      // --- ÜBUNG 1: Sätze ordnen mit Distraktoren (5 Aufgaben) ---
+      {
+        id: 'ex1-1',
+        exercise: 'ex1',
+        exNumber: 1,
+        itemNum: 1,
+        exTitle: 'Übung 1 · Sätze ordnen',
+        instruction: 'Schreiben Sie Sätze mit nicht.',
+        question: 'Bist du ledig?',
+        solution: 'Nein, ich bin nicht ledig.',
+        words: ['ledig.', 'kein', 'ich', 'Nein,', 'nicht', 'keine', 'bin']
+      },
+      {
+        id: 'ex1-2',
+        exercise: 'ex1',
+        exNumber: 1,
+        itemNum: 2,
+        exTitle: 'Übung 1 · Sätze ordnen',
+        instruction: 'Schreiben Sie Sätze mit nicht.',
+        question: 'Wohnst du in Frankfurt?',
+        solution: 'Nein, ich wohne nicht in Frankfurt.',
+        words: ['Frankfurt.', 'wohne', 'keinen', 'Nein,', 'nicht', 'kein', 'ich', 'in']
+      },
+      {
+        id: 'ex1-3',
+        exercise: 'ex1',
+        exNumber: 1,
+        itemNum: 3,
+        exTitle: 'Übung 1 · Sätze ordnen',
+        instruction: 'Schreiben Sie Sätze mit nicht.',
+        question: 'Arbeitest du bei einer Bank?',
+        solution: 'Nein, ich arbeite nicht bei einer Bank.',
+        words: ['einer', 'kein', 'ich', 'Bank.', 'Nein,', 'arbeite', 'keine', 'nicht', 'bei']
+      },
+      {
+        id: 'ex1-4',
+        exercise: 'ex1',
+        exNumber: 1,
+        itemNum: 4,
+        exTitle: 'Übung 1 · Sätze ordnen',
+        instruction: 'Schreiben Sie Sätze mit nicht.',
+        question: 'Joggst du?',
+        solution: 'Nein, ich jogge nicht.',
+        words: ['jogge', 'keine', 'Nein,', 'nicht.', 'kein', 'ich']
+      },
+      {
+        id: 'ex1-5',
+        exercise: 'ex1',
+        exNumber: 1,
+        itemNum: 5,
+        exTitle: 'Übung 1 · Sätze ordnen',
+        instruction: 'Schreiben Sie Sätze mit nicht.',
+        question: 'Magst du die Chefin?',
+        solution: 'Nein, ich mag die Chefin nicht.',
+        words: ['Chefin', 'keinen', 'ich', 'Nein,', 'die', 'nicht.', 'mag', 'keine']
+      },
+
+      // --- ÜBUNG 2: kein- ergänzen (9 Aufgaben) ---
+      {
+        id: 'ex2-1',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 1,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Möchtest du ein Omelett?',
+        prefix: 'Nein, ich möchte',
+        suffix: 'Omelett.',
+        hint: 'das Omelett – Akkusativ Neutrum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'kein'
+      },
+      {
+        id: 'ex2-2',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 2,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Hast du eine Spülmaschine?',
+        prefix: 'Nein, ich habe',
+        suffix: 'Spülmaschine.',
+        hint: 'die Spülmaschine – Akkusativ Femininum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keine'
+      },
+      {
+        id: 'ex2-3',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 3,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Hast du eine Espressomaschine?',
+        prefix: 'Nein, ich habe',
+        suffix: 'Espressomaschine.',
+        hint: 'die Espressomaschine – Akkusativ Femininum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keine'
+      },
+      {
+        id: 'ex2-4',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 4,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Hast du Durst?',
+        prefix: 'Nein, ich habe',
+        suffix: 'Durst.',
+        hint: 'der Durst – Akkusativ Maskulinum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keinen'
+      },
+      {
+        id: 'ex2-5',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 5,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Magst du Süßigkeiten?',
+        prefix: 'Nein, ich mag',
+        suffix: 'Süßigkeiten.',
+        hint: 'die Süßigkeiten – Plural',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keine'
+      },
+      {
+        id: 'ex2-6',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 6,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Möchtest du einen Kaffee?',
+        prefix: 'Nein, ich möchte',
+        suffix: 'Kaffee.',
+        hint: 'der Kaffee – Akkusativ Maskulinum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keinen'
+      },
+      {
+        id: 'ex2-7',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 7,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Möchtest du eine Pizza?',
+        prefix: 'Nein, ich möchte',
+        suffix: 'Pizza.',
+        hint: 'die Pizza – Akkusativ Femininum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keine'
+      },
+      {
+        id: 'ex2-8',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 8,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Möchtest du ein Brötchen?',
+        prefix: 'Nein, ich möchte',
+        suffix: 'Brötchen.',
+        hint: 'das Brötchen – Akkusativ Neutrum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'kein'
+      },
+      {
+        id: 'ex2-9',
+        exercise: 'ex2',
+        exNumber: 2,
+        itemNum: 9,
+        exTitle: 'Übung 2 · kein- ergänzen',
+        instruction: 'Ergänzen Sie kein-.',
+        question: 'Hast du Hunger?',
+        prefix: 'Nein, ich habe',
+        suffix: 'Hunger.',
+        hint: 'der Hunger – Akkusativ Maskulinum',
+        options: ['kein', 'keine', 'keinen'],
+        correct: 'keinen'
+      },
+
+      // --- ÜBUNG 3: Lernkarten 3D (6 Aufgaben) ---
+      {
+        id: 'ex3-1',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 1,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Haben Sie ein Haus?',
+        hintNoun: 'das Haus',
+        backAnswer: 'Nein, ich habe kein Haus.'
+      },
+      {
+        id: 'ex3-2',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 2,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Haben Sie Kinder?',
+        hintNoun: 'Kinder (Pl.)',
+        backAnswer: 'Nein, ich habe keine Kinder.'
+      },
+      {
+        id: 'ex3-3',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 3,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Essen Sie Fleisch?',
+        hintNoun: 'das Fleisch',
+        backAnswer: 'Nein, ich esse kein Fleisch.'
+      },
+      {
+        id: 'ex3-4',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 4,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Haben Sie ein Haustier?',
+        hintNoun: 'das Haustier',
+        backAnswer: 'Nein, ich habe kein Haustier.'
+      },
+      {
+        id: 'ex3-5',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 5,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Trinken Sie Alkohol?',
+        hintNoun: 'der Alkohol',
+        backAnswer: 'Nein, ich trinke keinen Alkohol.'
+      },
+      {
+        id: 'ex3-6',
+        exercise: 'ex3',
+        exNumber: 3,
+        itemNum: 6,
+        exTitle: 'Übung 3 · Lernkarten',
+        instruction: 'Antworten Sie mit kein-.',
+        frontQuestion: 'Möchten Sie einen Tee?',
+        hintNoun: 'der Tee',
+        backAnswer: 'Nein, ich möchte keinen Tee.'
+      },
+
+      // --- ÜBUNG 4: nicht oder kein-? (9 Aufgaben) ---
+      {
+        id: 'ex4-1',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 1,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich komme aus Sri Lanka.',
+        category: 'nicht',
+        gapPrefix: 'Ich komme',
+        gapSuffix: 'aus Sri Lanka.',
+        exactChoices: ['nicht', 'kein', 'keine'],
+        exactCorrect: 'nicht',
+        negative: 'Ich komme nicht aus Sri Lanka.',
+        explanation: 'Präposition + Ort (aus Sri Lanka).'
+      },
+      {
+        id: 'ex4-2',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 2,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich bin 23 Jahre alt.',
+        category: 'nicht',
+        gapPrefix: 'Ich bin',
+        gapSuffix: '23 Jahre alt.',
+        exactChoices: ['nicht', 'kein', 'keine'],
+        exactCorrect: 'nicht',
+        negative: 'Ich bin nicht 23 Jahre alt.',
+        explanation: 'Adjektiv / Altersangabe (23 Jahre alt).'
+      },
+      {
+        id: 'ex4-3',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 3,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich wohne in Köln.',
+        category: 'nicht',
+        gapPrefix: 'Ich wohne',
+        gapSuffix: 'in Köln.',
+        exactChoices: ['nicht', 'kein', 'keinen'],
+        exactCorrect: 'nicht',
+        negative: 'Ich wohne nicht in Köln.',
+        explanation: 'Präposition + Ort (in Köln).'
+      },
+      {
+        id: 'ex4-4',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 4,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich bin verheiratet.',
+        category: 'nicht',
+        gapPrefix: 'Ich bin',
+        gapSuffix: 'verheiratet.',
+        exactChoices: ['nicht', 'kein', 'keine'],
+        exactCorrect: 'nicht',
+        negative: 'Ich bin nicht verheiratet.',
+        explanation: 'Adjektiv (verheiratet).'
+      },
+      {
+        id: 'ex4-5',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 5,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich habe Kinder.',
+        category: 'kein-',
+        gapPrefix: 'Ich habe',
+        gapSuffix: 'Kinder.',
+        exactChoices: ['kein', 'keine', 'keinen'],
+        exactCorrect: 'keine',
+        negative: 'Ich habe keine Kinder.',
+        explanation: 'Nomen ohne Artikel, Plural (Kinder → keine Kinder).'
+      },
+      {
+        id: 'ex4-6',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 6,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Das sind meine Kinder.',
+        category: 'nicht',
+        gapPrefix: 'Das sind',
+        gapSuffix: 'meine Kinder.',
+        exactChoices: ['nicht', 'keine', 'kein'],
+        exactCorrect: 'nicht',
+        negative: 'Das sind nicht meine Kinder.',
+        explanation: 'Possessivartikel „meine“ vor dem Nomen → nicht.'
+      },
+      {
+        id: 'ex4-7',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 7,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich habe einen Hund.',
+        category: 'kein-',
+        gapPrefix: 'Ich habe',
+        gapSuffix: 'Hund.',
+        exactChoices: ['kein', 'keine', 'keinen'],
+        exactCorrect: 'keinen',
+        negative: 'Ich habe keinen Hund.',
+        explanation: 'Unbestimmter Artikel „einen“, Maskulin Akkusativ (einen Hund → keinen Hund).'
+      },
+      {
+        id: 'ex4-8',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 8,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich habe ein Auto.',
+        category: 'kein-',
+        gapPrefix: 'Ich habe',
+        gapSuffix: 'Auto.',
+        exactChoices: ['kein', 'keine', 'keinen'],
+        exactCorrect: 'kein',
+        negative: 'Ich habe kein Auto.',
+        explanation: 'Unbestimmter Artikel „ein“, Neutrum Akkusativ (ein Auto → kein Auto).'
+      },
+      {
+        id: 'ex4-9',
+        exercise: 'ex4',
+        exNumber: 4,
+        itemNum: 9,
+        exTitle: 'Übung 4 · nicht oder kein-?',
+        instruction: 'Schreiben Sie Sätze mit nicht oder kein.',
+        affirmative: 'Ich bin zufrieden.',
+        category: 'nicht',
+        gapPrefix: 'Ich bin',
+        gapSuffix: 'zufrieden.',
+        exactChoices: ['nicht', 'kein', 'keine'],
+        exactCorrect: 'nicht',
+        negative: 'Ich bin nicht zufrieden.',
+        explanation: 'Adjektiv (zufrieden).'
+      }
+    ];
+
+    // =========================================================================
+    // 2. STATE & LOCAL STORAGE
+    // =========================================================================
+    const STORAGE_KEY = 'german_a1_negation_progress_v2';
+
+    let state = {
+      mode: 'all', // 'all', 'ex1', 'ex2', 'ex3', 'ex4'
+      currentIndex: 0,
+      soundEnabled: true,
+      completed: {}, // { 'ex1-1': true, ... }
+      // Ephemeral per-slide UI state
+      ex1SelectedIndices: {}, // { 'ex1-1': [3, 2, ...] }
+      ex1Feedback: {},        // { 'ex1-1': 'correct' | 'wrong' }
+      ex2Choice: {},          // { 'ex2-1': 'kein' }
+      ex3Flipped: {},         // { 'ex3-1': true/false }
+      ex3ReviewLater: {},     // { 'ex3-1': true/false }
+      ex4Step1Done: {},       // { 'ex4-1': true }
+      ex4Step1Wrong: {},      // { 'ex4-1': 'kein-' }
+      ex4Step2Choice: {}      // { 'ex4-1': 'nicht' }
+    };
+
+    function loadProgress() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            state.completed = parsed.completed || {};
+            state.soundEnabled = parsed.soundEnabled !== undefined ? parsed.soundEnabled : true;
+          }
+        }
+      } catch (e) {
+        console.warn('No se pudo cargar localStorage:', e);
+      }
+    }
+
+    function saveProgress() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          completed: state.completed,
+          soundEnabled: state.soundEnabled
+        }));
+      } catch (e) {
+        console.warn('No se pudo guardar en localStorage:', e);
+      }
+    }
+
+    // =========================================================================
+    // 3. WEB AUDIO API SOUND EFFECTS
+    // =========================================================================
+    let audioCtx = null;
+
+    function playSound(type) {
+      if (!state.soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'click') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(680, now + 0.06);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+          osc.start(now);
+          osc.stop(now + 0.06);
+        } else if (type === 'flip') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(560, now + 0.14);
+          gain.gain.setValueAtTime(0.09, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+          osc.start(now);
+          osc.stop(now + 0.14);
+        } else if (type === 'success') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(523.25, now); // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.09); // E5
+          osc.frequency.setValueAtTime(783.99, now + 0.18); // G5
+          gain.gain.setValueAtTime(0.14, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
+          osc.start(now);
+          osc.stop(now + 0.38);
+        } else if (type === 'error') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(210, now);
+          osc.frequency.linearRampToValueAtTime(160, now + 0.22);
+          gain.gain.setValueAtTime(0.09, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+          osc.start(now);
+          osc.stop(now + 0.22);
+        }
+      } catch (e) {
+        // Ignore audio errors if blocked
+      }
+    }
+
+    function toggleSound() {
+      state.soundEnabled = !state.soundEnabled;
+      saveProgress();
+      updateSoundIcon();
+      if (state.soundEnabled) playSound('click');
+    }
+
+    function updateSoundIcon() {
+      const icon = document.getElementById('sound-icon');
+      if (state.soundEnabled) {
+        icon.className = 'fa-solid fa-volume-high text-indigo-600';
+      } else {
+        icon.className = 'fa-solid fa-volume-xmark text-slate-400';
+      }
+    }
+
+    // =========================================================================
+    // 4. NAVIGATION & FILTERING
+    // =========================================================================
+    function getFilteredSlides() {
+      if (state.mode === 'all') return SLIDES_DATA;
+      return SLIDES_DATA.filter(s => s.exercise === state.mode);
+    }
+
+    function setMode(newMode) {
+      playSound('click');
+      state.mode = newMode;
+      state.currentIndex = 0;
+      renderAll();
+    }
+
+    function prevSlide() {
+      if (state.currentIndex > 0) {
+        playSound('click');
+        state.currentIndex--;
+        renderAll();
+      }
+    }
+
+    function nextSlide() {
+      const slides = getFilteredSlides();
+      if (state.currentIndex < slides.length - 1) {
+        playSound('click');
+        state.currentIndex++;
+        renderAll();
+      }
+    }
+
+    function jumpToSlideId(slideId) {
+      playSound('click');
+      const slides = getFilteredSlides();
+      let idx = slides.findIndex(s => s.id === slideId);
+      if (idx === -1) {
+        state.mode = 'all';
+        idx = SLIDES_DATA.findIndex(s => s.id === slideId);
+      }
+      state.currentIndex = Math.max(0, idx);
+      toggleOverviewModal(false);
+      renderAll();
+    }
+
+    function markSlideCompleted(slideId) {
+      if (!state.completed[slideId]) {
+        state.completed[slideId] = true;
+        saveProgress();
+      }
+      updateProgressUI();
+    }
+
+    // =========================================================================
+    // 5. RENDERING ENGINE
+    // =========================================================================
+    function renderAll() {
+      updateTabsUI();
+      updateProgressUI();
+      renderCurrentSlide();
+      updateFooterControls();
+    }
+
+    function updateTabsUI() {
+      const modes = ['all', 'ex1', 'ex2', 'ex3', 'ex4'];
+      modes.forEach(m => {
+        const tab = document.getElementById(`tab-${m}`);
+        if (!tab) return;
+        if (state.mode === m) {
+          tab.className = 'mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border bg-indigo-600 text-white border-indigo-600 shadow-sm';
+        } else {
+          tab.className = 'mode-tab shrink-0 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 border bg-white hover:bg-slate-100 text-slate-700 border-slate-200';
+        }
+      });
+    }
+
+    function updateProgressUI() {
+      const total = SLIDES_DATA.length;
+      const doneTotal = SLIDES_DATA.filter(s => state.completed[s.id]).length;
+      const pct = Math.round((doneTotal / total) * 100);
+
+      document.getElementById('global-progress-text').textContent = `${doneTotal} / ${total}`;
+      document.getElementById('global-progress-bar').style.width = `${pct}%`;
+      document.getElementById('badge-all').textContent = `${doneTotal}/${total}`;
+
+      ['ex1', 'ex2', 'ex3', 'ex4'].forEach(ex => {
+        const items = SLIDES_DATA.filter(s => s.exercise === ex);
+        const done = items.filter(s => state.completed[s.id]).length;
+        document.getElementById(`badge-${ex}`).textContent = `${done}/${items.length}`;
+      });
+    }
+
+    function updateFooterControls() {
+      const slides = getFilteredSlides();
+      const total = slides.length;
+      const curr = state.currentIndex;
+
+      document.getElementById('slide-counter').textContent = `${curr + 1} / ${total}`;
+      document.getElementById('btn-prev').disabled = curr === 0;
+      document.getElementById('btn-next').disabled = curr === total - 1;
+
+      // Mini progress dots
+      const dotsContainer = document.getElementById('mini-dots');
+      dotsContainer.innerHTML = slides.map((s, idx) => {
+        const isCurrent = idx === curr;
+        const isDone = !!state.completed[s.id];
+        let colorClass = 'bg-slate-300';
+        if (isCurrent) colorClass = 'bg-indigo-600 w-4';
+        else if (isDone) colorClass = 'bg-emerald-500';
+        return `<button onclick="state.currentIndex=${idx}; renderAll();" title="Folie ${idx + 1}" class="h-2 ${isCurrent ? 'w-4' : 'w-2'} rounded-full transition-all ${colorClass}"></button>`;
+      }).join('');
+    }
+
+    function renderCurrentSlide() {
+      const slides = getFilteredSlides();
+      const slide = slides[state.currentIndex];
+      if (!slide) return;
+
+      // Ribbon styling by exercise
+      const pill = document.getElementById('slide-ex-pill');
+      const pillColors = {
+        ex1: 'bg-purple-100 text-purple-800',
+        ex2: 'bg-sky-100 text-sky-800',
+        ex3: 'bg-amber-100 text-amber-800',
+        ex4: 'bg-emerald-100 text-emerald-800'
+      };
+      pill.className = `px-3 py-1 rounded-xl text-xs sm:text-sm font-extrabold uppercase tracking-wide ${pillColors[slide.exercise]}`;
+      pill.textContent = `${slide.exTitle} (${slide.itemNum})`;
+      document.getElementById('slide-instruction').textContent = slide.instruction;
+
+      // Completed badge
+      const statusBadge = document.getElementById('slide-status-badge');
+      if (state.completed[slide.id]) {
+        statusBadge.classList.remove('hidden');
+        statusBadge.classList.add('inline-flex');
+      } else {
+        statusBadge.classList.add('hidden');
+        statusBadge.classList.remove('inline-flex');
+      }
+
+      const container = document.getElementById('slide-content');
+      container.innerHTML = '';
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'w-full max-w-4xl mx-auto animate-slide-in';
+
+      if (slide.exercise === 'ex1') renderExercise1(slide, wrapper);
+      else if (slide.exercise === 'ex2') renderExercise2(slide, wrapper);
+      else if (slide.exercise === 'ex3') renderExercise3(slide, wrapper);
+      else if (slide.exercise === 'ex4') renderExercise4(slide, wrapper);
+
+      container.appendChild(wrapper);
+    }
+
+    // =========================================================================
+    // EXERCISE 1 RENDERER: Word Order with Distractors
+    // =========================================================================
+    function renderExercise1(slide, wrapper) {
+      const selected = state.ex1SelectedIndices[slide.id] || [];
+      const feedback = state.ex1Feedback[slide.id] || null;
+      const isSolved = feedback === 'correct' || !!state.completed[slide.id];
+
+      // If already completed in a prior session and selected is empty, prefill solution words
+      let activeIndices = selected;
+      if (isSolved && activeIndices.length === 0) {
+        const targetWords = slide.solution.split(' ');
+        const used = new Set();
+        activeIndices = targetWords.map(tw => {
+          const foundIdx = slide.words.findIndex((w, i) => w === tw && !used.has(i));
+          if (foundIdx !== -1) used.add(foundIdx);
+          return foundIdx;
+        }).filter(i => i !== -1);
+        state.ex1SelectedIndices[slide.id] = activeIndices;
+      }
+
+      const selectedChipsHTML = activeIndices.length === 0
+        ? `<span class="text-slate-400 italic text-base sm:text-lg flex items-center gap-2"><i class="fa-solid fa-hand-pointer"></i> Klicken Sie auf die Wörter unten, um den Satz zu bilden ...</span>`
+        : activeIndices.map((wordIdx, pos) => `
+            <button onclick="ex1RemoveWord('${slide.id}', ${pos})" ${isSolved ? 'disabled' : ''}
+              class="ww-btn px-4 py-2.5 rounded-2xl font-display font-bold text-lg sm:text-2xl transition
+              ${isSolved ? 'bg-emerald-600 text-white cursor-default' : 'bg-indigo-600 hover:bg-indigo-700 text-white'}">
+              ${slide.words[wordIdx]}
+            </button>
+          `).join('');
+
+      const bankChipsHTML = slide.words.map((word, idx) => {
+        const isUsed = activeIndices.includes(idx);
+        return `
+          <button onclick="ex1AddWord('${slide.id}', ${idx})" ${isUsed || isSolved ? 'disabled' : ''}
+            class="ww-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl font-display font-bold text-lg sm:text-2xl border-2 transition
+            ${isUsed
+              ? 'bg-slate-100 text-slate-300 border-slate-200 shadow-none opacity-40 cursor-not-allowed'
+              : 'bg-white hover:bg-purple-50 text-slate-800 border-slate-300 hover:border-purple-400'}">
+            ${word}
+          </button>
+        `;
+      }).join('');
+
+      let feedbackBanner = '';
+      if (feedback === 'correct' || isSolved) {
+        feedbackBanner = `
+          <div class="mt-5 p-4 rounded-2xl bg-emerald-50 border-2 border-emerald-300 text-emerald-900 flex items-center justify-between gap-3 animate-success">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div>
+                <div class="font-display font-extrabold text-base sm:text-lg">Richtig! Sehr gut!</div>
+                <div class="text-xs sm:text-sm text-emerald-700">Sie haben die falschen Wörter mit <em>kein-</em> weggelassen.</div>
+              </div>
+            </div>
+            <button onclick="ex1ResetSlide('${slide.id}')" class="px-3 py-1.5 rounded-xl bg-white hover:bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300">
+              Nochmal
+            </button>
+          </div>
+        `;
+      } else if (feedback === 'wrong') {
+        feedbackBanner = `
+          <div class="mt-5 p-4 rounded-2xl bg-rose-50 border-2 border-rose-300 text-rose-900 flex items-center justify-between gap-3 animate-shake">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <div>
+                <div class="font-display font-extrabold text-base sm:text-lg">Nicht ganz richtig. Prüfen Sie die Wortstellung!</div>
+                <div class="text-xs sm:text-sm text-rose-700">Tipp: Beginnen Sie mit <strong>„Nein, ich ...“</strong> und benutzen Sie nur <strong>nicht</strong>.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      wrapper.innerHTML = `
+        <div class="text-center mb-6">
+          <span class="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider mb-2">
+            Aufgabe ${slide.itemNum} von 5
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            „${slide.question}“
+          </h2>
+        </div>
+
+        <!-- Answer Dropzone -->
+        <div id="ex1-dropzone" class="min-h-[84px] sm:min-h-[96px] p-4 sm:p-5 rounded-3xl border-2 border-dashed ${isSolved ? 'border-emerald-400 bg-emerald-50/50' : 'border-indigo-300 bg-indigo-50/40'} flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 transition-colors">
+          ${selectedChipsHTML}
+        </div>
+
+        <!-- Word Bank -->
+        <div class="mt-6">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 text-center mb-3">
+            Wörterbank (Achtung: Es gibt falsche Wörter!)
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            ${bankChipsHTML}
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        ${!isSolved ? `
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <button onclick="ex1ClearSelection('${slide.id}')" ${activeIndices.length === 0 ? 'disabled' : ''}
+              class="ww-btn px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-700 font-bold text-sm sm:text-base border border-slate-300 flex items-center gap-2">
+              <i class="fa-solid fa-eraser"></i> Löschen
+            </button>
+            <button onclick="ex1Check('${slide.id}')" ${activeIndices.length === 0 ? 'disabled' : ''}
+              class="ww-btn ww-btn-emerald px-7 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-40 text-white font-display font-bold text-base sm:text-lg flex items-center gap-2">
+              <i class="fa-solid fa-check-double"></i> Prüfen
+            </button>
+          </div>
+        ` : ''}
+
+        ${feedbackBanner}
+      `;
+    }
+
+    function ex1AddWord(slideId, wordIdx) {
+      playSound('click');
+      if (!state.ex1SelectedIndices[slideId]) state.ex1SelectedIndices[slideId] = [];
+      if (!state.ex1SelectedIndices[slideId].includes(wordIdx)) {
+        state.ex1SelectedIndices[slideId].push(wordIdx);
+      }
+      state.ex1Feedback[slideId] = null;
+      renderCurrentSlide();
+    }
+
+    function ex1RemoveWord(slideId, pos) {
+      playSound('click');
+      if (!state.ex1SelectedIndices[slideId]) return;
+      state.ex1SelectedIndices[slideId].splice(pos, 1);
+      state.ex1Feedback[slideId] = null;
+      renderCurrentSlide();
+    }
+
+    function ex1ClearSelection(slideId) {
+      playSound('click');
+      state.ex1SelectedIndices[slideId] = [];
+      state.ex1Feedback[slideId] = null;
+      renderCurrentSlide();
+    }
+
+    function ex1ResetSlide(slideId) {
+      playSound('click');
+      state.ex1SelectedIndices[slideId] = [];
+      state.ex1Feedback[slideId] = null;
+      delete state.completed[slideId];
+      saveProgress();
+      renderAll();
+    }
+
+    function ex1Check(slideId) {
+      const slide = SLIDES_DATA.find(s => s.id === slideId);
+      const indices = state.ex1SelectedIndices[slideId] || [];
+      const builtSentence = indices.map(i => slide.words[i]).join(' ');
+
+      if (builtSentence === slide.solution) {
+        playSound('success');
+        state.ex1Feedback[slideId] = 'correct';
+        markSlideCompleted(slideId);
+        renderAll();
+      } else {
+        playSound('error');
+        state.ex1Feedback[slideId] = 'wrong';
+        renderCurrentSlide();
+      }
+    }
+
+    // =========================================================================
+    // EXERCISE 2 RENDERER: Multiple Choice (kein / keine / keinen)
+    // =========================================================================
+    function renderExercise2(slide, wrapper) {
+      const chosen = state.ex2Choice[slide.id] || null;
+      const isSolved = chosen === slide.correct || !!state.completed[slide.id];
+      const displayWord = isSolved ? slide.correct : (chosen || '______');
+
+      const gapBadgeClass = isSolved
+        ? 'bg-emerald-100 text-emerald-800 border-emerald-400'
+        : chosen
+          ? 'bg-rose-100 text-rose-800 border-rose-400 animate-shake'
+          : 'bg-sky-100 text-sky-800 border-sky-400 border-dashed';
+
+      const optionsHTML = slide.options.map(opt => {
+        let btnStyle = 'bg-white hover:bg-sky-50 text-slate-800 border-slate-300 hover:border-sky-500';
+        if (isSolved && opt === slide.correct) {
+          btnStyle = 'bg-emerald-600 text-white border-emerald-700 ww-btn-emerald animate-success';
+        } else if (chosen === opt && opt !== slide.correct) {
+          btnStyle = 'bg-rose-600 text-white border-rose-700 ww-btn-rose animate-shake';
+        } else if (isSolved) {
+          btnStyle = 'bg-slate-100 text-slate-400 border-slate-200 opacity-50';
+        }
+
+        return `
+          <button onclick="ex2Select('${slide.id}', '${opt}')" ${isSolved ? 'disabled' : ''}
+            class="ww-btn py-4 sm:py-5 px-6 sm:px-10 rounded-2xl border-2 font-display font-extrabold text-2xl sm:text-3xl transition ${btnStyle}">
+            ${opt}
+          </button>
+        `;
+      }).join('');
+
+      wrapper.innerHTML = `
+        <div class="text-center">
+          <span class="inline-block px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider mb-3">
+            Aufgabe ${slide.itemNum} von 9
+          </span>
+
+          <!-- Question Bubble -->
+          <div class="inline-block bg-slate-100 border border-slate-200 rounded-2xl px-6 py-3 mb-6">
+            <span class="text-xs font-bold uppercase text-slate-400 block mb-0.5">Frage</span>
+            <p class="text-xl sm:text-3xl font-bold text-slate-800">„${slide.question}“</p>
+          </div>
+
+          <!-- Sentence with Gap -->
+          <div class="my-4 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-slate-50 to-white border-2 border-slate-200 shadow-inner">
+            <p class="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 leading-relaxed flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              <span>${slide.prefix}</span>
+              <span class="px-4 py-1 rounded-2xl border-2 ${gapBadgeClass} min-w-[120px] inline-block transition-all">
+                ${displayWord}
+              </span>
+              <span>${slide.suffix}</span>
+            </p>
+          </div>
+
+          <!-- Option Buttons -->
+          <div class="mt-8 grid grid-cols-3 gap-3 sm:gap-5 max-w-2xl mx-auto">
+            ${optionsHTML}
+          </div>
+
+          <!-- Feedback -->
+          ${isSolved ? `
+            <div class="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm sm:text-base font-bold animate-slide-in">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+              <span>Richtig! (${slide.hint})</span>
+            </div>
+          ` : chosen ? `
+            <div class="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-rose-50 border border-rose-300 text-rose-900 text-sm sm:text-base font-bold animate-slide-in">
+              <i class="fa-solid fa-circle-xmark text-rose-600 text-lg"></i>
+              <span>Nicht ganz richtig! Achten Sie auf Genus und Kasus: <strong>${slide.hint}</strong>.</span>
+            </div>
+          ` : `
+            <p class="mt-5 text-xs sm:text-sm text-slate-400 font-medium">
+              Wählen Sie die richtige Form von <em>kein-</em> im Akkusativ
+            </p>
+          `}
+        </div>
+      `;
+    }
+
+    function ex2Select(slideId, option) {
+      const slide = SLIDES_DATA.find(s => s.id === slideId);
+      state.ex2Choice[slideId] = option;
+      if (option === slide.correct) {
+        playSound('success');
+        markSlideCompleted(slideId);
+        renderAll();
+      } else {
+        playSound('error');
+        renderCurrentSlide();
+      }
+    }
+
+    // =========================================================================
+    // EXERCISE 3 RENDERER: 3D Flip Flashcards
+    // =========================================================================
+    function renderExercise3(slide, wrapper) {
+      const isFlipped = !!state.ex3Flipped[slide.id];
+      const isDone = !!state.completed[slide.id];
+      const isReview = !!state.ex3ReviewLater[slide.id];
+
+      wrapper.innerHTML = `
+        <div class="flex flex-col items-center">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider">
+              Karte ${slide.itemNum} von 6
+            </span>
+            <span class="text-xs text-slate-400 hidden sm:inline">· Klicken Sie auf die Karte oder drücken Sie <kbd class="px-1.5 py-0.5 bg-slate-100 border border-slate-300 rounded text-[11px]">Leertaste</kbd></span>
+          </div>
+
+          <!-- 3D Flip Card -->
+          <div onclick="ex3FlipCard('${slide.id}')" class="perspective-1000 w-full max-w-2xl h-72 sm:h-80 cursor-pointer group">
+            <div class="flip-card-inner ${isFlipped ? 'is-flipped' : ''}">
+              
+              <!-- FRONT -->
+              <div class="flip-card-front bg-gradient-to-br from-amber-50 via-white to-orange-50 border-2 border-amber-300 shadow-lg p-6 sm:p-10 flex flex-col items-center justify-between text-center group-hover:border-amber-400 transition">
+                <div class="w-full flex items-center justify-between text-xs font-bold text-amber-700 uppercase tracking-wider">
+                  <span><i class="fa-solid fa-question-circle mr-1"></i> Frage</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-amber-100/80 border border-amber-200">
+                    Nomen: <strong>${slide.hintNoun}</strong>
+                  </span>
+                </div>
+
+                <div class="my-auto">
+                  <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 leading-tight">
+                    „${slide.frontQuestion}“
+                  </h2>
+                  <p class="mt-3 text-sm text-slate-500">Antworten Sie zuerst laut und drehen Sie dann die Karte um</p>
+                </div>
+
+                <div class="inline-flex items-center gap-2 text-amber-700 font-bold text-sm bg-amber-100/70 px-4 py-1.5 rounded-full">
+                  <i class="fa-solid fa-rotate"></i> Klicken für die Lösung
+                </div>
+              </div>
+
+              <!-- BACK -->
+              <div class="flip-card-back bg-gradient-to-br from-indigo-600 to-purple-700 text-white border-2 border-indigo-500 shadow-xl p-6 sm:p-10 flex flex-col items-center justify-between text-center">
+                <div class="w-full flex items-center justify-between text-xs font-bold text-indigo-200 uppercase tracking-wider">
+                  <span><i class="fa-solid fa-check-circle mr-1"></i> Lösung</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/15 text-white">
+                    ${slide.hintNoun}
+                  </span>
+                </div>
+
+                <div class="my-auto">
+                  <p class="text-sm text-indigo-200 mb-2">„${slide.frontQuestion}“</p>
+                  <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white leading-tight drop-shadow-sm">
+                    „${slide.backAnswer}“
+                  </h2>
+                </div>
+
+                <div class="inline-flex items-center gap-2 text-indigo-100 font-semibold text-xs sm:text-sm bg-white/10 px-4 py-1.5 rounded-full">
+                  <i class="fa-solid fa-rotate"></i> Klicken für die Frage
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Controls & Self-Assessment -->
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <button onclick="ex3FlipCard('${slide.id}')"
+              class="ww-btn px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-display font-bold text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-rotate"></i> Karte umdrehen
+            </button>
+
+            <button onclick="ex3Rate('${slide.id}', false)"
+              class="ww-btn px-5 py-3 rounded-2xl ${isReview && !isDone ? 'bg-rose-600 text-white' : 'bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200'} font-bold text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-clock-rotate-left"></i> Nochmal üben
+            </button>
+
+            <button onclick="ex3Rate('${slide.id}', true)"
+              class="ww-btn ww-btn-emerald px-6 py-3 rounded-2xl ${isDone ? 'bg-emerald-700 ring-2 ring-emerald-300' : 'bg-emerald-600 hover:bg-emerald-700'} text-white font-display font-bold text-sm sm:text-base flex items-center gap-2">
+              <i class="fa-solid fa-thumbs-up"></i> Gewusst
+            </button>
+          </div>
+
+          ${isReview && !isDone ? `
+            <p class="mt-3 text-xs font-bold text-rose-600">
+              <i class="fa-solid fa-bookmark mr-1"></i> Zum Wiederholen markiert.
+            </p>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    function ex3FlipCard(slideId) {
+      playSound('flip');
+      state.ex3Flipped[slideId] = !state.ex3Flipped[slideId];
+      renderCurrentSlide();
+    }
+
+    function ex3Rate(slideId, known) {
+      if (known) {
+        playSound('success');
+        state.ex3ReviewLater[slideId] = false;
+        markSlideCompleted(slideId);
+        renderAll();
+      } else {
+        playSound('click');
+        state.ex3ReviewLater[slideId] = true;
+        delete state.completed[slideId];
+        saveProgress();
+        renderAll();
+      }
+    }
+
+    // =========================================================================
+    // EXERCISE 4 RENDERER: Binary Classifier + Guided Transformation
+    // =========================================================================
+    function renderExercise4(slide, wrapper) {
+      const isDone = !!state.completed[slide.id];
+      const step1Done = isDone || !!state.ex4Step1Done[slide.id];
+      const step1Wrong = state.ex4Step1Wrong[slide.id] || null;
+      const step2Choice = isDone ? slide.exactCorrect : (state.ex4Step2Choice[slide.id] || null);
+
+      wrapper.innerHTML = `
+        <div class="text-center">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
+            Aufgabe ${slide.itemNum} von 9 · Satz verneinen
+          </span>
+
+          <!-- Affirmative Statement Card -->
+          <div class="max-w-2xl mx-auto p-5 sm:p-7 rounded-3xl bg-slate-900 text-white shadow-lg mb-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-1">Aussagesatz</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl tracking-tight">
+              „${slide.affirmative}“
+            </h2>
+          </div>
+
+          <!-- STEP 1: Binary Choice (nicht vs kein-) -->
+          ${!step1Done ? `
+            <div class="max-w-2xl mx-auto">
+              <p class="text-sm sm:text-base font-bold text-slate-700 mb-4">
+                Schritt 1: Welche Negation braucht dieser Satz?
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button onclick="ex4ChooseCategory('${slide.id}', 'nicht')"
+                  class="ww-btn py-5 px-6 rounded-3xl border-2 font-display font-extrabold text-2xl sm:text-3xl transition flex flex-col items-center justify-center gap-1
+                  ${step1Wrong === 'nicht' ? 'bg-rose-600 text-white border-rose-700 animate-shake' : 'bg-sky-500 hover:bg-sky-600 text-white border-sky-600'}">
+                  <span>nicht</span>
+                  <span class="text-xs font-sans font-semibold opacity-90">Verben, Adjektive, Orte, Possessivartikel ...</span>
+                </button>
+
+                <button onclick="ex4ChooseCategory('${slide.id}', 'kein-')"
+                  class="ww-btn py-5 px-6 rounded-3xl border-2 font-display font-extrabold text-2xl sm:text-3xl transition flex flex-col items-center justify-center gap-1
+                  ${step1Wrong === 'kein-' ? 'bg-rose-600 text-white border-rose-700 animate-shake' : 'bg-amber-500 hover:bg-amber-600 text-white border-amber-600'}">
+                  <span>kein / keine / keinen</span>
+                  <span class="text-xs font-sans font-semibold opacity-90">Nomen ohne Artikel oder mit ein / eine / einen</span>
+                </button>
+              </div>
+
+              ${step1Wrong ? `
+                <div class="mt-4 p-3 rounded-2xl bg-rose-50 border border-rose-300 text-rose-800 text-sm font-bold animate-slide-in">
+                  <i class="fa-solid fa-circle-exclamation mr-1"></i> Nicht ganz richtig! Was wird hier negiert? Versuchen Sie es noch einmal.
+                </div>
+              ` : ''}
+            </div>
+          ` : `
+            <!-- STEP 2: Complete the exact transformed sentence -->
+            <div class="max-w-2xl mx-auto animate-slide-in">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold mb-3">
+                <i class="fa-solid fa-check"></i> Schritt 1 richtig: <strong>${slide.category}</strong>
+              </div>
+
+              <div class="p-5 sm:p-6 rounded-3xl bg-emerald-50/70 border-2 border-emerald-300">
+                <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">
+                  ${isDone ? 'Negativer Satz' : 'Schritt 2: Ergänzen Sie den Satz'}
+                </p>
+                <p class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 flex flex-wrap items-center justify-center gap-2">
+                  <span>${slide.gapPrefix}</span>
+                  <span class="px-3.5 py-1 rounded-xl border-2 ${isDone ? 'bg-emerald-600 text-white border-emerald-700' : 'bg-white text-emerald-800 border-emerald-400 border-dashed'}">
+                    ${isDone ? slide.exactCorrect : '___'}
+                  </span>
+                  <span>${slide.gapSuffix}</span>
+                </p>
+
+                ${!isDone ? `
+                  <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+                    ${slide.exactChoices.map(ch => {
+                      const isWrongCh = step2Choice === ch && ch !== slide.exactCorrect;
+                      return `
+                        <button onclick="ex4ChooseExact('${slide.id}', '${ch}')"
+                          class="ww-btn px-6 py-3 rounded-2xl border-2 font-display font-extrabold text-xl transition
+                          ${isWrongCh ? 'bg-rose-600 text-white border-rose-700 animate-shake' : 'bg-white hover:bg-emerald-100 text-slate-800 border-emerald-300'}">
+                          ${ch}
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                ` : `
+                  <div class="mt-4 pt-3 border-t border-emerald-200 text-sm text-emerald-900 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                    <span>${slide.explanation}</span>
+                  </div>
+                `}
+              </div>
+            </div>
+          `}
+        </div>
+      `;
+    }
+
+    function ex4ChooseCategory(slideId, selectedCat) {
+      const slide = SLIDES_DATA.find(s => s.id === slideId);
+      if (selectedCat === slide.category) {
+        playSound('flip');
+        state.ex4Step1Done[slideId] = true;
+        state.ex4Step1Wrong[slideId] = null;
+        renderCurrentSlide();
+      } else {
+        playSound('error');
+        state.ex4Step1Wrong[slideId] = selectedCat;
+        renderCurrentSlide();
+      }
+    }
+
+    function ex4ChooseExact(slideId, choice) {
+      const slide = SLIDES_DATA.find(s => s.id === slideId);
+      state.ex4Step2Choice[slideId] = choice;
+      if (choice === slide.exactCorrect) {
+        playSound('success');
+        markSlideCompleted(slideId);
+        renderAll();
+      } else {
+        playSound('error');
+        renderCurrentSlide();
+      }
+    }
+
+    // =========================================================================
+    // 6. OVERVIEW MODAL, GRAMMAR TIP, FULLSCREEN & RESET
+    // =========================================================================
+    function toggleGrammarTip() {
+      playSound('click');
+      const box = document.getElementById('grammar-tip-box');
+      box.classList.toggle('hidden');
+    }
+
+    function toggleOverviewModal(show) {
+      playSound('click');
+      const modal = document.getElementById('overview-modal');
+      if (show) {
+        modal.classList.remove('hidden');
+        renderOverviewGrid();
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function renderOverviewGrid() {
+      const query = (document.getElementById('overview-search').value || '').toLowerCase().trim();
+      const grid = document.getElementById('overview-grid');
+
+      const filtered = SLIDES_DATA.filter(s => {
+        const text = `${s.exTitle} ${s.question || ''} ${s.frontQuestion || ''} ${s.affirmative || ''} ${s.solution || ''} ${s.backAnswer || ''} ${s.negative || ''}`.toLowerCase();
+        return text.includes(query);
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-10 text-slate-400">Keine Folien für „${query}“ gefunden.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((s) => {
+        const globalIdx = SLIDES_DATA.findIndex(item => item.id === s.id);
+        const isDone = !!state.completed[s.id];
+        const previewText = s.question || s.frontQuestion || s.affirmative;
+        const badgeColors = {
+          ex1: 'bg-purple-100 text-purple-800',
+          ex2: 'bg-sky-100 text-sky-800',
+          ex3: 'bg-amber-100 text-amber-800',
+          ex4: 'bg-emerald-100 text-emerald-800'
+        };
+
+        return `
+          <button onclick="jumpToSlideId('${s.id}')"
+            class="text-left p-4 rounded-2xl border-2 transition flex flex-col justify-between gap-2
+            ${isDone ? 'bg-emerald-50/60 border-emerald-300 hover:border-emerald-500' : 'bg-white border-slate-200 hover:border-indigo-400'}">
+            <div class="flex items-center justify-between w-full">
+              <span class="px-2 py-0.5 rounded-lg text-[11px] font-extrabold ${badgeColors[s.exercise]}">
+                #${globalIdx + 1} · Üb. ${s.exNumber}.${s.itemNum}
+              </span>
+              ${isDone
+                ? '<i class="fa-solid fa-circle-check text-emerald-600"></i>'
+                : '<i class="fa-regular fa-circle text-slate-300"></i>'}
+            </div>
+            <p class="font-bold text-sm text-slate-800 line-clamp-2">„${previewText}“</p>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function toggleFullscreen() {
+      playSound('click');
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const icon = document.getElementById('fullscreen-icon');
+      if (document.fullscreenElement) {
+        icon.className = 'fa-solid fa-compress';
+      } else {
+        icon.className = 'fa-solid fa-expand';
+      }
+    });
+
+    function openResetModal() {
+      playSound('click');
+      document.getElementById('reset-modal').classList.remove('hidden');
+    }
+
+    function closeResetModal() {
+      playSound('click');
+      document.getElementById('reset-modal').classList.add('hidden');
+    }
+
+    function confirmResetProgress() {
+      playSound('click');
+      state.completed = {};
+      state.ex1SelectedIndices = {};
+      state.ex1Feedback = {};
+      state.ex2Choice = {};
+      state.ex3Flipped = {};
+      state.ex3ReviewLater = {};
+      state.ex4Step1Done = {};
+      state.ex4Step1Wrong = {};
+      state.ex4Step2Choice = {};
+      state.currentIndex = 0;
+      saveProgress();
+      closeResetModal();
+      renderAll();
+    }
+
+    // =========================================================================
+    // 7. KEYBOARD SHORTCUTS (Left / Right / Space)
+    // =========================================================================
+    document.addEventListener('keydown', (e) => {
+      // Ignore if typing inside search input
+      if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+
+      const overviewOpen = !document.getElementById('overview-modal').classList.contains('hidden');
+      const resetOpen = !document.getElementById('reset-modal').classList.contains('hidden');
+
+      if (e.key === 'Escape') {
+        if (overviewOpen) toggleOverviewModal(false);
+        if (resetOpen) closeResetModal();
+        return;
+      }
+
+      if (overviewOpen || resetOpen) return;
+
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.code === 'Space') {
+        const slide = getFilteredSlides()[state.currentIndex];
+        if (slide && slide.exercise === 'ex3') {
+          e.preventDefault();
+          ex3FlipCard(slide.id);
+        }
+      }
+    });
+
+    // =========================================================================
+    // 8. INITIALIZATION
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      loadProgress();
+      updateSoundIcon();
+      renderAll();
+    });
+  </script>
+</body>
+</html>
